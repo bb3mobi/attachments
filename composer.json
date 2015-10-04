@@ -1,0 +1,29 @@
+{
+    "name": "bb3mobi/attachments",
+    "type": "phpbb-extension",
+    "description": "",
+    "homepage": "http://phpbbguru.net",
+    "keywords": ["attachment", "file", "image", "upload", "center", "category"],
+    "version": "1.0.0",
+    "time": "2015-09-28",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Anvar",
+            "homepage": "http://bb3.mobi",
+            "role": "Author extension"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+      "phpbb/epv": "dev-master"
+    },
+    "extra": {
+        "display-name": "Attachments files center",
+        "soft-require": {
+        "phpbb/phpbb": "3.1.*@dev"
+        }
+    }
+}

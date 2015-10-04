@@ -1,0 +1,45 @@
+<!-- INCLUDE overall_header.html -->
+<!--
+	Attachnemt file center phpBB 3.1: Anvar Stybaev (http://apwa.ru)
+-->
+
+<div id="cp-menu">
+
+	<h2>{L_ATTACHMENTS_FORUMS}</h2>
+
+	<div class="panel cp-mini">
+		<p>{L_ATTACHMENTS_EXPLAIN}</p>
+		<a href="{U_ATTACHMENTS}"><strong>{L_ATTACHMENTS_COUNT_ALL}{L_COLON} {TOTAL_ATTACHMENTS}</strong></a>
+	</div>
+
+	<!-- IF .catrow -->
+	<div id="navigation" role="navigation">
+		<ul>
+			<!-- BEGIN catrow -->
+			<li<!-- IF catrow.CAT_SELECT --> id="active-subsection"<!-- ENDIF -->><a href="{catrow.U_CAT_VIEW}">{catrow.CAT_ICON} {catrow.CAT_TITLE} ({catrow.CAT_COUNT})</a></li>
+			<!-- END catrow -->
+		</ul>
+	</div>
+	<!-- ENDIF -->
+
+	<div class="copyright responsive-hide">
+		{ATTACHMENTS_BY}
+	</div>
+
+</div>
+
+<div id="cp-main" class="panel-container">
+
+	<!-- INCLUDE @bb3mobi_attachments/filelist_body.html -->
+
+	<!-- IF not .attachrow -->
+		<!-- INCLUDE @bb3mobi_attachments/file_body.html -->
+	<!-- ENDIF -->
+
+	<!-- IF not ATTACHMENTS_BY -->
+		<div class="panel"><h3>{L_ERROR}</h3><p>{L_NO_ATTACHMENTS}</p></div>
+	<!-- ENDIF -->
+
+</div>
+
+<!-- INCLUDE overall_footer.html -->

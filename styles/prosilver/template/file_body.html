@@ -1,0 +1,23 @@
+<!-- IF ATTACHMENTS_BY -->
+<div class="panel">
+	<div class="inner">
+		<div class="<!-- IF S_HAS_ATTACHMENTS -->column1<!-- ELSE -->postbody" style="width: 100%<!-- ENDIF -->">
+			<p class="author">{L_POSTED}{L_COLON} <strong>{POST_AUTHOR_FULL}</strong> &raquo; {POST_DATE}</p>
+			<p>{L_TOPIC}{L_COLON} <strong><a href="{U_VIEW_POST}">{POST_TITLE}</a></strong></p>
+			<h3>{L_MESSAGE_BODY}{L_COLON}</h3>
+			<div class="content">{MESSAGE}</div>
+			<div class="signature"><p>&laquo; <a href="{U_ATTACHMENTS_TOPIC}">{L_ATTACHMENTS_TOPIC}</a></p></div>
+		</div>
+		<!-- IF S_HAS_ATTACHMENTS -->
+		<div class="column2">
+			<dl class="attachbox">
+				<dt>{L_ATTACHMENTS}</dt>
+				<!-- BEGIN attachment -->
+				<dd>{attachment.DISPLAY_ATTACHMENT}</dd>
+				<!-- END attachment -->
+			</dl>
+		</div>
+		<!-- ENDIF -->
+	</div>
+</div>
+<!-- ENDIF -->

@@ -1,0 +1,69 @@
+<!-- IF .attachrow -->
+<div class="action-bar top">
+	<div class="pagination">
+		{NUM_ATTACHMENTS}
+		<!-- IF .pagination --> 
+			<!-- INCLUDE pagination.html -->
+		<!-- ELSE --> 
+			 &bull; {PAGE_NUMBER}
+		<!-- ENDIF -->
+	</div>
+</div>
+
+<div class="forabg">
+<div class="inner">
+	<ul class="topiclist">
+		<li class="header">
+			<dl>
+				<dt><div class="list-inner"><a href="{U_SORT_FILENAME}">{L_FILENAME}</a></div></dt>
+				<dd class="extra"><a href="{U_SORT_DOWNLOADS}">{L_DOWNLOADS}</a></dd>
+				<dd class="time"><span><a href="{U_SORT_POST_TIME}">{L_POST_TIME}</a></span></dd>
+			</dl>
+		</li>
+	</ul>
+	<ul class="topiclist cplist responsive-show-columns">
+
+	<!-- BEGIN attachrow -->
+	<li class="row<!-- IF attachrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
+		<dl>
+			<dt>
+				<div class="list-inner">
+					<strong>{attachrow.ROW_NUMBER}.</strong> <a href="{attachrow.U_VIEW_ATTACHMENT}" class="topictitle attachment-filename" title="{attachrow.FILENAME}">{attachrow.FILENAME}</a> <span class="right-box">{attachrow.SIZE}</span>
+					<!-- IF not attachrow.AUTH_DOWNLOAD --> <span class="right-box error">{L_NO_ACCESS_ATTACHMENT}</span><!-- ENDIF --><br />
+					<!-- IF attachrow.COMMENT -->{attachrow.COMMENT}<br /><!-- ENDIF -->
+					{L_TOPIC}{L_COLON} <a href="{attachrow.U_VIEW_TOPIC}">{attachrow.TOPIC_TITLE}</a>
+				</div>
+			</dt>
+			<dd class="extra">{attachrow.DOWNLOAD_COUNT}</dd>
+			<dd class="time"><span>{attachrow.POST_TIME}</span></dd>
+			<dd class="mark"><a href="<!-- IF attachrow.AUTH_DOWNLOAD -->{attachrow.U_DOWN_ATTACHMENT}<!-- ELSE -->#<!-- ENDIF -->" class="button icon-button">{L_DOWNLOAD}</a></dd>
+		</dl>
+	</li>
+	<!-- END attachrow -->
+	</ul>
+</div>
+</div>
+
+<form id="ucp" method="post" action="{S_ATTACH_ACTION}"{S_FORM_ENCTYPE}>
+<fieldset class="display-options">
+	<label for="sk">{L_SORT_BY}{L_COLON} <select name="sk" id="sk">{S_SORT_OPTIONS}</select></label> 
+	<label><select name="sd" id="sd">{S_ORDER_SELECT}</select></label>
+	<input class="button2" type="submit" name="sort" value="{L_SORT}" />
+	{S_FORM_TOKEN}
+</fieldset>
+</form>
+
+<hr />
+
+<div class="action-bar bottom">
+	<div class="pagination">
+		{NUM_ATTACHMENTS}
+		<!-- IF .pagination -->
+			<!-- INCLUDE pagination.html -->
+		<!-- ELSE --> 
+			 &bull; {PAGE_NUMBER}
+		<!-- ENDIF -->
+	</div>
+</div>
+
+<!-- ENDIF -->

@@ -1,0 +1,19 @@
+<!-- IF ATTACHMENTS_BY -->
+<div class="post bg3">
+	<p class="author">{L_POSTED}{L_COLON} <strong>{POST_AUTHOR_FULL}</strong> &raquo; {POST_DATE}</p>
+	<p>{L_TOPIC}{L_COLON} <strong><a href="{U_VIEW_POST}">{POST_TITLE}</a></strong></p>
+</div>
+<div class="post bg1">
+	<b>{L_MESSAGE_BODY}{L_COLON}</b>
+	<div class="content">{MESSAGE}</div>
+</div>
+<!-- IF S_HAS_ATTACHMENTS -->
+<div class="post attachbox">
+	<b>{L_ATTACHMENTS}{L_COLON}</b>
+	<!-- BEGIN attachment -->
+	{attachment.DISPLAY_ATTACHMENT}
+	<!-- END attachment -->
+</div>
+<!-- ENDIF -->
+<p>&laquo; <a href="{U_ATTACHMENTS_TOPIC}">{L_ATTACHMENTS_TOPIC}</a></p>
+<!-- ENDIF -->

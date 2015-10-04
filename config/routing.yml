@@ -1,0 +1,13 @@
+bb3mobi_attach_cat:
+    path: /attach
+    defaults: { _controller: bb3mobi.attachments.route:cat }
+bb3mobi_attach_view:
+    path: /attach/{cat_id}
+    defaults: { _controller: bb3mobi.attachments.route:cat }
+    requirements:
+        cat_id: \d+
+bb3mobi_attach_file:
+    path: /attach/file/{attach_id}
+    defaults: { _controller: bb3mobi.attachments.route:cat }
+    requirements:
+        attach_id: \d+

@@ -1,0 +1,23 @@
+services:
+    bb3mobi.attachments.listener:
+        class: bb3mobi\attachments\event\listener
+        arguments:
+            - @template
+            - @config
+            - @dbal.conn
+            - @controller.helper
+        tags:
+            - { name: event.listener }
+    bb3mobi.attachments.route:
+        class: bb3mobi\attachments\controller\route
+        arguments:
+            - @template
+            - @config
+            - @auth
+            - @user
+            - @request
+            - @dbal.conn
+            - @controller.helper
+            - @pagination
+            - %core.root_path%
+            - %core.php_ext%

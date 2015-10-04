@@ -1,0 +1,34 @@
+<!-- INCLUDE overall_header.html -->
+<!--
+	Attachnemt file center phpBB 3.1: Anvar Stybaev (http://apwa.ru)
+-->
+
+<!-- IF S_ATTACH_CAT -->
+<h2>{L_ATTACHMENTS_FORUMS}</h2>
+<p>{L_ATTACHMENTS_EXPLAIN}</p>
+<div class="forabg"><div class="header"><a href="{U_ATTACHMENTS}">{L_ATTACHMENTS_COUNT_ALL}{L_COLON} {TOTAL_ATTACHMENTS}</a></div>
+<!-- ELSE -->
+<h2><a href="{U_ATTACHMENTS}">{L_ATTACHMENTS_COUNT_ALL}{L_COLON} {TOTAL_ATTACHMENTS}</a></h2>
+<!-- ENDIF -->
+<!-- BEGIN catrow -->
+<!-- IF S_ATTACH_CAT -->
+	<div class="row"><a href="{catrow.U_CAT_VIEW}">{catrow.CAT_ICON} {catrow.CAT_TITLE} ({catrow.CAT_COUNT})</a></div>
+<!-- ELSE -->
+<!-- IF catrow.CAT_SELECT -->
+	<div class="header">{catrow.CAT_ICON} {catrow.CAT_TITLE} ({catrow.CAT_COUNT})</div><!-- ENDIF -->
+<!-- ENDIF -->
+<!-- END catrow -->
+<!-- IF S_ATTACH_CAT --></div><!-- ENDIF -->
+
+<!-- INCLUDE @bb3mobi_attachments/filelist_body.html -->
+
+<!-- IF not .attachrow -->
+	<!-- INCLUDE @bb3mobi_attachments/file_body.html -->
+<!-- ENDIF -->
+
+<!-- IF not ATTACHMENTS_BY -->
+	<div class="panel"><h3>{L_ERROR}</h3><p>{L_NO_ATTACHMENTS}</p></div>
+<!-- ENDIF -->
+
+<div class="mark">{ATTACHMENTS_BY}</div>
+<!-- INCLUDE overall_footer.html -->
