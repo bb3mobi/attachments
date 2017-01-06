@@ -302,10 +302,13 @@ class route
 				$image_size = @getimagesize($image);
 				if (isset($image_size[0]) && isset($image_size[1]))
 				{
-					$u_image = ($row['thumbnail']) ? append_sid("{$this->phpbb_root_path}download/file.$this->php_ext", 'id=' . $row['attach_id'] . '&amp;t=1') : $u_down_attachment;
-					$image_height = $image_size[1];
-					$image_width = $image_size[0];
-					$image_view = '<img src="' . $u_image . '" width="' . round(40/$image_height*$image_width) . '" height="40" alt="" />';
+					$image_width = round(40/$image_size[1]*$image_size[0]);
+					$image_height = 40;
+					if ($image_width < $image_height*2)
+					{
+						$u_image = ($row['thumbnail']) ? append_sid("{$this->phpbb_root_path}download/file.$this->php_ext", 'id=' . $row['attach_id'] . '&amp;t=1') : $u_down_attachment;
+						$image_view = '<img src="' . $u_image . '" width="' . $image_width . '" height="' . $image_height . '" alt="" />';
+					}
 				}
 			}
 

@@ -9,6 +9,7 @@
 	<!-- BEGIN attachrow -->
 	<div class="row<!-- IF attachrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
 		<div class="inner">
+			<span class="avatar">{attachrow.U_VIEW_IMAGE}</span>
 			<b>{attachrow.ROW_NUMBER}.</b> <a href="{attachrow.U_VIEW_ATTACHMENT}" class="topictitle">{attachrow.FILENAME}</a> &raquo; <i>{attachrow.POST_TIME}</i> ({attachrow.SIZE})<br />
 			<!-- IF attachrow.COMMENT -->{attachrow.COMMENT}<br /><!-- ENDIF -->
 			{L_DOWNLOADS}{L_COLON} {attachrow.DOWNLOAD_COUNT} <!-- IF attachrow.AUTH_DOWNLOAD --><a href="{attachrow.U_DOWN_ATTACHMENT}" class="rightside button">{L_DOWNLOAD}</a><!-- ELSE --><span class="rightside error">{L_NO_ACCESS_ATTACHMENT}</span><!-- ENDIF --><br />
