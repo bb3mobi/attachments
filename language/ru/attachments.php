@@ -41,7 +41,7 @@ $lang = array_merge($lang, array(
 	'ATTACHMENTS_EXPLAIN'	=> 'Список вложений в сообщениях, оставленных на этой конференции.',
 	'ATTACHMENTS_FORUMS'	=> 'Каталог файлов форума',
 	'ATTACHMENTS_TOPIC'		=> 'Все файлы этой темы',
-	'ATTACHMENTS_BY'		=> '&copy; %s <a href="http://resspect.ru">Resspect 2015</a>',
+	'ATTACHMENTS_BY'		=> '&copy; %s <a href="http://rybalovka.com">Rybalov 2017</a>',
 	'ATTACHMENTS_COUNT_ALL'	=> 'Все файлы форума',
 	'NO_ATTACHMENTS'		=> 'Нет файлов для отображения',
 	'DOWNLOADS'				=> 'Скачивания',

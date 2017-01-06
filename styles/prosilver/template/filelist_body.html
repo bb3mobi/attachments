@@ -28,7 +28,8 @@
 		<dl>
 			<dt>
 				<div class="list-inner">
-					<strong>{attachrow.ROW_NUMBER}.</strong> <a href="{attachrow.U_VIEW_ATTACHMENT}" class="topictitle attachment-filename" title="{attachrow.FILENAME}">{attachrow.FILENAME}</a> <span class="right-box">{attachrow.SIZE}</span>
+					<span class="forum-image">{attachrow.U_VIEW_IMAGE}</span>
+					<strong>{attachrow.ROW_NUMBER}.</strong> <a href="{attachrow.U_VIEW_ATTACHMENT}" class="topictitle attachment-filename" title="{L_PREVIEW} {attachrow.FILENAME}">{attachrow.FILENAME}</a> <span>[ {attachrow.SIZE} ]</span>
 					<!-- IF not attachrow.AUTH_DOWNLOAD --> <span class="right-box error">{L_NO_ACCESS_ATTACHMENT}</span><!-- ENDIF --><br />
 					<!-- IF attachrow.COMMENT -->{attachrow.COMMENT}<br /><!-- ENDIF -->
 					{L_TOPIC}{L_COLON} <a href="{attachrow.U_VIEW_TOPIC}">{attachrow.TOPIC_TITLE}</a>
@@ -36,7 +37,7 @@
 			</dt>
 			<dd class="extra">{attachrow.DOWNLOAD_COUNT}</dd>
 			<dd class="time"><span>{attachrow.POST_TIME}</span></dd>
-			<dd class="mark"><a href="<!-- IF attachrow.AUTH_DOWNLOAD -->{attachrow.U_DOWN_ATTACHMENT}<!-- ELSE -->#<!-- ENDIF -->" class="button icon-button">{L_DOWNLOAD}</a></dd>
+			<dd class="mark"><a href="<!-- IF attachrow.AUTH_DOWNLOAD -->{attachrow.U_DOWN_ATTACHMENT}<!-- ELSE -->#<!-- ENDIF -->" class="button1">{L_DOWNLOAD}</a></dd>
 		</dl>
 	</li>
 	<!-- END attachrow -->

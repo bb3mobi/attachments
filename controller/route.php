@@ -293,6 +293,22 @@ class route
 		$row_count = 0;
 		while ($row = $this->db->sql_fetchrow($result))
 		{
+			$u_down_attachment = append_sid("{$this->phpbb_root_path}download/file.$this->php_ext", 'id=' . $row['attach_id']);
+
+			$image_view = false;
+			if ($row['mimetype'] == 'image/jpeg' || $row['mimetype'] == 'image/png' || $row['mimetype'] == 'image/gif')
+			{
+				$image = $this->phpbb_root_path . $this->config['upload_path'] . '/' . (($row['thumbnail']) ? "thumb_" : "") . utf8_basename($row['physical_filename']);
+				$image_size = @getimagesize($image);
+				if (isset($image_size[0]) && isset($image_size[1]))
+				{
+					$u_image = ($row['thumbnail']) ? append_sid("{$this->phpbb_root_path}download/file.$this->php_ext", 'id=' . $row['attach_id'] . '&amp;t=1') : $u_down_attachment;
+					$image_height = $image_size[1];
+					$image_width = $image_size[0];
+					$image_view = '<img src="' . $u_image . '" width="' . round(40/$image_height*$image_width) . '" height="40" alt="" />';
+				}
+			}
+
 			$view_topic = append_sid("{$this->phpbb_root_path}viewtopic.$this->php_ext", "t={$row['topic_id']}&amp;p={$row['post_msg_id']}") . "#p{$row['post_msg_id']}";
 			$this->template->assign_block_vars('attachrow', array(
 				'ROW_NUMBER'		=> $row_count + ($start + 1),
@@ -307,8 +323,9 @@ class route
 				'POST_ID'			=> $row['post_msg_id'],
 				'TOPIC_ID'			=> $row['topic_id'],
 				'AUTH_DOWNLOAD'		=> $this->auth->acl_get('f_download', $row['forum_id']),
+				'U_VIEW_IMAGE'		=> $image_view,
 				'U_VIEW_ATTACHMENT'	=> $this->helper->route("bb3mobi_attach_file", array('attach_id' => $row['attach_id'])),
-				'U_DOWN_ATTACHMENT'	=> append_sid("{$this->phpbb_root_path}download/file.$this->php_ext", 'id=' . $row['attach_id']),
+				'U_DOWN_ATTACHMENT'	=> $u_down_attachment,
 				'U_VIEW_TOPIC'		=> $view_topic)
 			);
 			$row_count++;
