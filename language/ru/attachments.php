@@ -3,7 +3,7 @@
 *
 * Attachments files center.
 *
-* @copyright (c) BB3.Mobi 2015 Anvar (resspect.ru)
+* @copyright (c) BB3.Mobi 2015 Anvar (phpbbguru.net)
 * @license GNU General Public License, version 2 (GPL-2.0)
 *
 * For full copyright and license information, please see

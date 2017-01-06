@@ -4,7 +4,7 @@
 * @package Attachments files center
 * @version $Id: listener.php 2015-09-28 16:35:17 $
 * @copyright BB3.Mobi 2015 (c) Anvar(http://apwa.ru)
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* @license GNU General Public License, version 2 (GPL-2.0)
 *
 */
 

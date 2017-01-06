@@ -4,7 +4,7 @@
 * @package Attachments files center
 * @copyright BB3.Mobi 2015 (c) Anvar(http://apwa.ru)
 * @version $Id: route.php 2015-09-28 16:38:10 $
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* @license GNU General Public License, version 2 (GPL-2.0)
 *
 */
 
