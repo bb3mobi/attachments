@@ -3,7 +3,7 @@
 	Attachnemt file center phpBB 3.1: Anvar Stybaev (http://apwa.ru)
 -->
 
-<div id="cp-menu">
+<div id="cp-menu" class="cp-menu">
 
 	<h2>{L_ATTACHMENTS_FORUMS}</h2>
 
@@ -13,10 +13,10 @@
 	</div>
 
 	<!-- IF .catrow -->
-	<div id="navigation" role="navigation">
+	<div id="navigation" class="navigation" role="navigation">
 		<ul>
 			<!-- BEGIN catrow -->
-			<li<!-- IF catrow.CAT_SELECT --> id="active-subsection"<!-- ENDIF -->><a href="{catrow.U_CAT_VIEW}">{catrow.CAT_ICON} {catrow.CAT_TITLE} ({catrow.CAT_COUNT})</a></li>
+			<li<!-- IF catrow.CAT_SELECT --> id="active-subsection" class="active-subsection"<!-- ENDIF -->><a href="{catrow.U_CAT_VIEW}">{catrow.CAT_ICON} {catrow.CAT_TITLE} ({catrow.CAT_COUNT})</a></li>
 			<!-- END catrow -->
 		</ul>
 	</div>
@@ -28,7 +28,7 @@
 
 </div>
 
-<div id="cp-main" class="panel-container">
+<div id="cp-main" class="cp-main panel-container">
 
 	<!-- INCLUDE @bb3mobi_attachments/filelist_body.html -->
 
